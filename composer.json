@@ -1,0 +1,20 @@
+{
+  "name": "subugoe/iiif-model",
+  "description": "Generic IIIF-Model",
+  "type": "library",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Ingo Pfennigstorf",
+      "email": "pfennigstorf@sub.uni-goettingen.de"
+    }
+  ],
+  "require": {
+    "jms/serializer": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Subugoe\\IIIFModel\\": ""
+    }
+  }
+}
