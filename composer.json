@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "jms/serializer": "^1"
+    "jms/serializer": "*"
   },
   "autoload": {
     "psr-4": {
