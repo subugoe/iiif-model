@@ -12,42 +12,28 @@ use JMS\Serializer\Annotation as Serializer;
 class AnnotationList
 {
     /**
-     * @var string
      * @Serializer\SerializedName("@context")
      * @Serializer\Since("2.0")
      */
-    private $context = 'http://iiif.io/api/presentation/2/context.json';
+    private string $context = 'http://iiif.io/api/presentation/2/context.json';
 
     /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
     /**
-     * @var string
      * @Serializer\SerializedName("@type")
      */
-    private $type = 'sc:AnnotationList';
+    private string $type = 'sc:AnnotationList';
 
-    /**
-     * @var array
-     */
-    private $resources;
+    private ?array $resources = null;
 
-    /**
-     * @return string
-     */
     public function getContext(): string
     {
         return $this->context;
     }
 
-    /**
-     * @param string $context
-     *
-     * @return AnnotationList
-     */
     public function setContext(string $context): self
     {
         $this->context = $context;
@@ -55,19 +41,11 @@ class AnnotationList
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return AnnotationList
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -75,19 +53,11 @@ class AnnotationList
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     *
-     * @return AnnotationList
-     */
     public function setType(string $type): self
     {
         $this->type = $type;
@@ -95,18 +65,13 @@ class AnnotationList
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getResources(): array
+    public function getResources(): ?array
     {
         return $this->resources;
     }
 
     /**
-     * @param array $resources
-     *
-     * @return AnnotationList
+     * @param mixed[] $resources
      */
     public function setResources(array $resources): self
     {

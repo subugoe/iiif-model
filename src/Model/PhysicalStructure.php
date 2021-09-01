@@ -7,49 +7,23 @@ namespace Subugoe\IIIFModel\Model;
  */
 class PhysicalStructure
 {
-    /**
-     * @var int
-     */
-    private $order;
+    private ?int $order = null;
 
-    /**
-     * @var string
-     */
-    private $label;
+    private ?string $label = null;
 
-    /**
-     * @var string
-     */
-    private $identifier;
+    private ?string $identifier = null;
 
-    /**
-     * @var string
-     */
-    private $page;
+    private ?string $page = null;
 
-    /**
-     * @var string
-     */
-    private $filename;
+    private ?string $filename = null;
 
-    /**
-     * @var string
-     */
-    private $annotation;
+    private ?string $annotation = null;
 
-    /**
-     * @return int
-     */
-    public function getOrder(): int
+    public function getOrder(): ?int
     {
         return $this->order;
     }
 
-    /**
-     * @param int $order
-     *
-     * @return PhysicalStructure
-     */
     public function setOrder(int $order): self
     {
         $this->order = $order;
@@ -57,19 +31,11 @@ class PhysicalStructure
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     *
-     * @return PhysicalStructure
-     */
     public function setLabel(string $label): self
     {
         $this->label = $label;
@@ -77,19 +43,11 @@ class PhysicalStructure
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIdentifier(): string
+    public function getIdentifier(): ?string
     {
         return $this->identifier;
     }
 
-    /**
-     * @param string $identifier
-     *
-     * @return PhysicalStructure
-     */
     public function setIdentifier(string $identifier): self
     {
         $this->identifier = $identifier;
@@ -97,19 +55,11 @@ class PhysicalStructure
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPage(): string
+    public function getPage(): ?string
     {
         return $this->page;
     }
 
-    /**
-     * @param string $page
-     *
-     * @return PhysicalStructure
-     */
     public function setPage(string $page): self
     {
         $this->page = $page;
@@ -117,19 +67,11 @@ class PhysicalStructure
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFilename(): string
+    public function getFilename(): ?string
     {
         return $this->filename;
     }
 
-    /**
-     * @param string $filename
-     *
-     * @return PhysicalStructure
-     */
     public function setFilename(string $filename): self
     {
         $this->filename = $filename;
@@ -145,11 +87,6 @@ class PhysicalStructure
         return $this->annotation;
     }
 
-    /**
-     * @param string $annotation
-     *
-     * @return PhysicalStructure
-     */
     public function setAnnotation(string $annotation): self
     {
         $this->annotation = $annotation;

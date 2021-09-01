@@ -12,34 +12,19 @@ use JMS\Serializer\Annotation as Serializer;
 class SeeAlso
 {
     /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
-    /**
-     * @var string
-     */
-    private $format;
+    private ?string $format = null;
 
-    /**
-     * @var string
-     */
-    private $profile;
+    private ?string $profile = null;
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return SeeAlso
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -47,19 +32,11 @@ class SeeAlso
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFormat(): string
+    public function getFormat(): ?string
     {
         return $this->format;
     }
 
-    /**
-     * @param string $format
-     *
-     * @return SeeAlso
-     */
     public function setFormat(string $format): self
     {
         $this->format = $format;
@@ -67,19 +44,11 @@ class SeeAlso
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProfile(): string
+    public function getProfile(): ?string
     {
         return $this->profile;
     }
 
-    /**
-     * @param string $profile
-     *
-     * @return SeeAlso
-     */
     public function setProfile(string $profile): self
     {
         $this->profile = $profile;

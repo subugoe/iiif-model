@@ -14,61 +14,23 @@ use JMS\Serializer\Annotation as Serializer;
 class GenericResource
 {
     /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     */
-    private $context = 'http://iiif.io/api/presentation/2/context.json';
-
-    /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@type")
-     */
-    private $type = 'oa:Annotation';
+    private ?\Subugoe\IIIFModel\Model\Presentation\ResourceData $resource = null;
 
-    /**
-     * @var string
-     */
-    private $motivation = 'sc:painting';
+    private ?int $height = null;
 
-    /**
-     * @var ResourceData
-     */
-    private $resource;
+    private ?int $width = null;
 
-    /**
-     * @var int
-     */
-    private $height;
+    private ?string $on = null;
 
-    /**
-     * @var int
-     */
-    private $width;
-
-    /**
-     * @var string
-     */
-    private $on;
-
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return GenericResource
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -76,19 +38,11 @@ class GenericResource
         return $this;
     }
 
-    /**
-     * @return ResourceData
-     */
-    public function getResource(): ResourceData
+    public function getResource(): ?ResourceData
     {
         return $this->resource;
     }
 
-    /**
-     * @param ResourceData $resource
-     *
-     * @return GenericResource
-     */
     public function setResource(ResourceData $resource): self
     {
         $this->resource = $resource;
@@ -96,19 +50,11 @@ class GenericResource
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getHeight(): int
+    public function getHeight(): ?int
     {
         return $this->height;
     }
 
-    /**
-     * @param int $height
-     *
-     * @return GenericResource
-     */
     public function setHeight(int $height): self
     {
         $this->height = $height;
@@ -116,19 +62,11 @@ class GenericResource
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getWidth(): int
+    public function getWidth(): ?int
     {
         return $this->width;
     }
 
-    /**
-     * @param int $width
-     *
-     * @return GenericResource
-     */
     public function setWidth(int $width): self
     {
         $this->width = $width;
@@ -136,19 +74,11 @@ class GenericResource
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOn(): string
+    public function getOn(): ?string
     {
         return $this->on;
     }
 
-    /**
-     * @param string $on
-     *
-     * @return GenericResource
-     */
     public function setOn(string $on): self
     {
         $this->on = $on;

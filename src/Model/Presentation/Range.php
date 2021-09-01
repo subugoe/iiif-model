@@ -14,47 +14,23 @@ class Range
 {
     /**
      * @Serializer\SerializedName("@id")
-     *
-     * @var string
      */
-    private $id;
+    private ?string $id = null;
+
+    private ?string $label = null;
 
     /**
-     * @Serializer\SerializedName("@type")
-     *
-     * @var string
-     */
-    private $type = 'sc:Range';
-
-    /**
-     * @var string
-     */
-    private $label;
-
-    /**
-     * @var string
      * @Serializer\SerializedName("viewingHint")
      */
-    private $viewingHint = 'top';
+    private string $viewingHint = 'top';
 
-    /**
-     * @var array
-     */
-    private $members;
+    private ?array $members;
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return Range
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -62,19 +38,11 @@ class Range
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     *
-     * @return Range
-     */
     public function setLabel(string $label): self
     {
         $this->label = $label;
@@ -82,19 +50,11 @@ class Range
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getViewingHint(): string
     {
         return $this->viewingHint;
     }
 
-    /**
-     * @param string $viewingHint
-     *
-     * @return Range
-     */
     public function setViewingHint(string $viewingHint): self
     {
         $this->viewingHint = $viewingHint;
@@ -102,19 +62,11 @@ class Range
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMembers(): array
+    public function getMembers(): ?array
     {
         return $this->members;
     }
 
-    /**
-     * @param array $members
-     *
-     * @return Range
-     */
     public function setMembers(array $members): self
     {
         $this->members = $members;
@@ -122,10 +74,7 @@ class Range
         return $this;
     }
 
-    /**
-     * @param Canvas $canvas
-     */
-    public function addMember(Canvas $canvas)
+    public function addMember(Canvas $canvas): void
     {
         $this->members[] = $canvas;
     }

@@ -12,62 +12,23 @@ use JMS\Serializer\Annotation as Serializer;
 class Collections
 {
     /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     */
-    private $context = 'http://iiif.io/api/presentation/2/context.json';
-
-    /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@type")
-     */
-    private $type = 'sc:Collection';
+    private ?string $label = null;
 
-    /**
-     * @var string
-     */
-    private $label;
+    private ?string $description = null;
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("viewingHint")
-     */
-    private $viewingHint = 'top';
+    private ?string $attribution = null;
 
-    /**
-     * @var string
-     */
-    private $description;
+    private ?array $collections = null;
 
-    /**
-     * @var string
-     */
-    private $attribution;
-
-    /**
-     * @var array
-     */
-    private $collections;
-
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return Collections
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -75,19 +36,11 @@ class Collections
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     *
-     * @return Collections
-     */
     public function setLabel(string $label): self
     {
         $this->label = $label;
@@ -95,19 +48,11 @@ class Collections
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     *
-     * @return Collections
-     */
     public function setDescription(string $description): self
     {
         $this->description = $description;
@@ -115,19 +60,11 @@ class Collections
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getAttribution(): string
+    public function getAttribution(): ?string
     {
         return $this->attribution;
     }
 
-    /**
-     * @param string $attribution
-     *
-     * @return Collections
-     */
     public function setAttribution(string $attribution): self
     {
         $this->attribution = $attribution;
@@ -135,19 +72,11 @@ class Collections
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getCollections(): array
+    public function getCollections(): ?array
     {
         return $this->collections;
     }
 
-    /**
-     * @param array $collections
-     *
-     * @return Collections
-     */
     public function setCollections(array $collections): self
     {
         $this->collections = $collections;
@@ -155,10 +84,7 @@ class Collections
         return $this;
     }
 
-    /**
-     * @param Collection $collection
-     */
-    public function addCollection(Collection $collection)
+    public function addCollection(Collection $collection): void
     {
         $this->collections[] = $collection;
     }

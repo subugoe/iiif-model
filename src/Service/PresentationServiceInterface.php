@@ -1,7 +1,8 @@
 <?php
-declare(strict_types=1);
-namespace Subugoe\IIIFModel\Service;
 
+declare(strict_types=1);
+
+namespace Subugoe\IIIFModel\Service;
 
 use Subugoe\IIIFModel\Model\Presentation\AnnotationList;
 use Subugoe\IIIFModel\Model\Presentation\Canvas;
@@ -28,6 +29,5 @@ interface PresentationServiceInterface
 
     public function getImage(\Subugoe\IIIFModel\Model\Document $document, string $imageId): GenericResource;
 
-    public function getSequence(\Subugoe\IIIFModel\Model\Document $document, $name): Sequence;
-
+    public function getSequence(\Subugoe\IIIFModel\Model\Document $document, string $name): Sequence;
 }

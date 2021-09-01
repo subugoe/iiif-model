@@ -13,29 +13,18 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Metadata
 {
-    /**
-     * @var string
-     */
-    private $label;
+    private ?string $label = null;
 
     /**
      * @var string|array
      */
     private $value;
 
-    /**
-     * @return string
-     */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     *
-     * @return Metadata
-     */
     public function setLabel(string $label): self
     {
         $this->label = $label;
@@ -53,8 +42,6 @@ class Metadata
 
     /**
      * @param string|array $value
-     *
-     * @return Metadata
      */
     public function setValue($value): self
     {

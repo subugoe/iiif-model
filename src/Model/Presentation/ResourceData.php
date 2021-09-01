@@ -12,70 +12,40 @@ use JMS\Serializer\Annotation as Serializer;
 class ResourceData
 {
     /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
     /**
-     * @var string
      * @Serializer\SerializedName("@type")
      */
-    private $type = 'dctypes:Image';
+    private string $type = 'dctypes:Image';
 
-    /**
-     * @var string
-     */
-    private $format;
+    private ?string $format = null;
 
-    /**
-     * @var Service
-     */
-    private $service;
+    private ?Service $service = null;
 
-    /**
-     * @var int
-     */
-    private $height;
+    private ?int $height = null;
 
-    /**
-     * @var int
-     */
-    private $width;
+    private ?int $width = null;
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return ResourceData
-     */
-    public function setId($id)
+    public function setId(string $id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFormat(): string
+    public function getFormat(): ?string
     {
         return $this->format;
     }
 
-    /**
-     * @param string $format
-     *
-     * @return ResourceData
-     */
     public function setFormat(string $format): self
     {
         $this->format = $format;
@@ -83,19 +53,11 @@ class ResourceData
         return $this;
     }
 
-    /**
-     * @return Service
-     */
-    public function getService(): Service
+    public function getService(): ?Service
     {
         return $this->service;
     }
 
-    /**
-     * @param Service $service
-     *
-     * @return ResourceData
-     */
     public function setService(Service $service): self
     {
         $this->service = $service;
@@ -103,19 +65,11 @@ class ResourceData
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getHeight(): int
+    public function getHeight(): ?int
     {
         return $this->height;
     }
 
-    /**
-     * @param int $height
-     *
-     * @return ResourceData
-     */
     public function setHeight(int $height): self
     {
         $this->height = $height;
@@ -123,19 +77,11 @@ class ResourceData
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getWidth(): int
+    public function getWidth(): ?int
     {
         return $this->width;
     }
 
-    /**
-     * @param int $width
-     *
-     * @return ResourceData
-     */
     public function setWidth(int $width): self
     {
         $this->width = $width;
@@ -143,19 +89,11 @@ class ResourceData
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     *
-     * @return ResourceData
-     */
     public function setType(string $type): self
     {
         $this->type = $type;

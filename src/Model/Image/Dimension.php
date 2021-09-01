@@ -13,29 +13,15 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Dimension
 {
-    /**
-     * @var float
-     */
-    private $height;
+    private ?float $height = null;
 
-    /**
-     * @var float
-     */
-    private $width;
+    private ?float $width = null;
 
-    /**
-     * @return float
-     */
-    public function getHeight(): float
+    public function getHeight(): ?float
     {
         return $this->height;
     }
 
-    /**
-     * @param float $height
-     *
-     * @return Dimension
-     */
     public function setHeight(float $height): self
     {
         $this->height = $height;
@@ -43,19 +29,11 @@ class Dimension
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getWidth(): float
+    public function getWidth(): ?float
     {
         return $this->width;
     }
 
-    /**
-     * @param float $width
-     *
-     * @return Dimension
-     */
     public function setWidth(float $width): self
     {
         $this->width = $width;

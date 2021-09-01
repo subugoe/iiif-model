@@ -13,92 +13,54 @@ use JMS\Serializer\Annotation as Serializer;
 class Structure
 {
     /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
     /**
-     * @var string
      * @Serializer\SerializedName("@type")
      */
-    private $type = 'sc:Range';
+    private string $type = 'sc:Range';
+
+    private ?array $metadata = null;
+
+    private ?string $label = null;
 
     /**
-     * @var array
-     */
-    private $metadata;
-
-    /**
-     * @var string
-     */
-    private $label;
-
-    /**
-     * @var string
      * @Serializer\SerializedName("viewingHint")
      */
-    private $viewingHint;
+    private ?string $viewingHint = null;
+
+    private ?array $members = null;
+
+    private ?array $ranges = null;
+
+    private ?array $canvases = null;
+
+    private ?string $within = null;
 
     /**
-     * @var array
-     */
-    private $members;
-
-    /**
-     * @var array
-     */
-    private $ranges;
-
-    /**
-     * @var array;
-     */
-    private $canvases;
-
-    /**
-     * @var string
-     */
-    private $within;
-
-    /**
-     * @var array
      * @Serializer\SkipWhenEmpty()
      */
-    private $rendering;
+    private array $rendering = [];
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return Structure
-     */
-    public function setId(string $id): self
+    public function setId(?string $id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     *
-     * @return Structure
-     */
     public function setType(string $type): self
     {
         $this->type = $type;
@@ -106,119 +68,71 @@ class Structure
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     *
-     * @return Structure
-     */
-    public function setLabel(string $label): self
+    public function setLabel(?string $label): self
     {
         $this->label = $label;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getViewingHint(): string
+    public function getViewingHint(): ?string
     {
         return $this->viewingHint;
     }
 
-    /**
-     * @param string $viewingHint
-     *
-     * @return Structure
-     */
-    public function setViewingHint(string $viewingHint): self
+    public function setViewingHint(?string $viewingHint): self
     {
         $this->viewingHint = $viewingHint;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMembers(): array
+    public function getMembers(): ?array
     {
         return $this->members;
     }
 
-    /**
-     * @param array $members
-     *
-     * @return Structure
-     */
-    public function setMembers(array $members): self
+    public function setMembers(?array $members): self
     {
         $this->members = $members;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getRanges(): array
+    public function getRanges(): ?array
     {
         return $this->ranges;
     }
 
-    /**
-     * @param array $ranges
-     *
-     * @return Structure
-     */
-    public function setRanges(array $ranges): self
+    public function setRanges(?array $ranges): self
     {
         $this->ranges = $ranges;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getCanvases(): array
+    public function getCanvases(): ?array
     {
         return $this->canvases;
     }
 
-    /**
-     * @param array $canvases
-     *
-     * @return Structure
-     */
-    public function setCanvases(array $canvases): self
+    public function setCanvases(?array $canvases): self
     {
         $this->canvases = $canvases;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWithin(): string
+    public function getWithin(): ?string
     {
         return $this->within;
     }
 
-    /**
-     * @param string $within
-     *
-     * @return Structure
-     */
     public function setWithin(string $within): self
     {
         $this->within = $within;
@@ -226,40 +140,24 @@ class Structure
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMetadata(): array
+    public function getMetadata(): ?array
     {
         return $this->metadata;
     }
 
-    /**
-     * @param array $metadata
-     *
-     * @return Structure
-     */
-    public function setMetadata(array $metadata): self
+    public function setMetadata(?array $metadata): self
     {
         $this->metadata = $metadata;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getRendering(): array
+    public function getRendering(): ?array
     {
         return $this->rendering;
     }
 
-    /**
-     * @param array $rendering
-     *
-     * @return Structure
-     */
-    public function setRendering(array $rendering): self
+    public function setRendering(?array $rendering): self
     {
         $this->rendering = $rendering;
 

@@ -14,29 +14,17 @@ use JMS\Serializer\Annotation as Serializer;
 class Image
 {
     /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
-    /**
-     * @var Service
-     */
-    private $service;
+    private ?\Subugoe\IIIFModel\Model\Presentation\Service $service = null;
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return Image
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -44,19 +32,11 @@ class Image
         return $this;
     }
 
-    /**
-     * @return Service
-     */
-    public function getService(): Service
+    public function getService(): ?Service
     {
         return $this->service;
     }
 
-    /**
-     * @param Service $service
-     *
-     * @return Image
-     */
     public function setService(Service $service): self
     {
         $this->service = $service;

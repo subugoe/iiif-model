@@ -14,35 +14,15 @@ use JMS\Serializer\Annotation as Serializer;
 class Service
 {
     /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     */
-    private $context = 'http://iiif.io/api/image/2/context.json';
-
-    /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
-    /**
-     * @var string
-     */
-    private $profile = 'http://iiif.io/api/image/2/level1.json';
-
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return Service
-     */
     public function setId(string $id): self
     {
         $this->id = $id;

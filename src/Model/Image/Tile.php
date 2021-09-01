@@ -13,35 +13,20 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Tile
 {
-    /**
-     * @var int
-     */
-    private $width;
+    private ?int $width = null;
+
+    private ?int $height = null;
 
     /**
-     * @var int
-     */
-    private $height;
-
-    /**
-     * @var array
      * @Serializer\SerializedName("scaleFactors")
      */
-    private $scaleFactors = [1, 2, 4, 8, 16];
+    private array $scaleFactors = [1, 2, 4, 8, 16];
 
-    /**
-     * @return int
-     */
-    public function getWidth(): int
+    public function getWidth(): ?int
     {
         return $this->width;
     }
 
-    /**
-     * @param int $width
-     *
-     * @return Tile
-     */
     public function setWidth(int $width): self
     {
         $this->width = $width;
@@ -49,19 +34,11 @@ class Tile
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getHeight(): int
+    public function getHeight(): ?int
     {
         return $this->height;
     }
 
-    /**
-     * @param int $height
-     *
-     * @return Tile
-     */
     public function setHeight(int $height): self
     {
         $this->height = $height;
@@ -69,19 +46,11 @@ class Tile
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getScaleFactors(): array
     {
         return $this->scaleFactors;
     }
 
-    /**
-     * @param array $scaleFactors
-     *
-     * @return Tile
-     */
     public function setScaleFactors(array $scaleFactors): self
     {
         $this->scaleFactors = $scaleFactors;

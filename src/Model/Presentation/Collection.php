@@ -9,56 +9,28 @@ use JMS\Serializer\Annotation as Serializer;
 class Collection
 {
     /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
     /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     */
-    private $context = 'http://iiif.io/api/presentation/2/context.json';
-
-    /**
-     * @var string
      * @Serializer\SerializedName("@type")
      */
-    private $type = 'sc:Collection';
+    private string $type = 'sc:Collection';
 
-    /**
-     * @var string
-     */
-    private $label;
+    private ?string $label = null;
 
-    /**
-     * @var array
-     */
-    private $medatata;
+    private ?array $medatata = null;
 
-    /**
-     * @var string
-     */
-    private $description;
+    private ?string $description = null;
 
-    /**
-     * @var Image
-     */
-    private $thumbnail;
+    private ?\Subugoe\IIIFModel\Model\Presentation\Image $thumbnail = null;
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return Collection
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -66,19 +38,11 @@ class Collection
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     *
-     * @return Collection
-     */
     public function setType(string $type): self
     {
         $this->type = $type;
@@ -86,19 +50,11 @@ class Collection
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     *
-     * @return Collection
-     */
     public function setLabel(string $label): self
     {
         $this->label = $label;
@@ -106,19 +62,11 @@ class Collection
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getMedatata(): array
+    public function getMedatata(): ?array
     {
         return $this->medatata;
     }
 
-    /**
-     * @param array $medatata
-     *
-     * @return Collection
-     */
     public function setMedatata(array $medatata): self
     {
         $this->medatata = $medatata;
@@ -126,19 +74,11 @@ class Collection
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     *
-     * @return Collection
-     */
     public function setDescription(string $description): self
     {
         $this->description = $description;
@@ -146,19 +86,11 @@ class Collection
         return $this;
     }
 
-    /**
-     * @return Image
-     */
-    public function getThumbnail(): Image
+    public function getThumbnail(): ?Image
     {
         return $this->thumbnail;
     }
 
-    /**
-     * @param Image $thumbnail
-     *
-     * @return Collection
-     */
     public function setThumbnail(Image $thumbnail): self
     {
         $this->thumbnail = $thumbnail;

@@ -12,34 +12,19 @@ use JMS\Serializer\Annotation as Serializer;
 class Rendering
 {
     /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
 
-    /**
-     * @var string
-     */
-    private $label;
+    private ?string $label = null;
 
-    /**
-     * @var string
-     */
-    private $format;
+    private ?string $format = null;
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return Rendering
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -47,19 +32,11 @@ class Rendering
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     *
-     * @return Rendering
-     */
     public function setLabel(string $label): self
     {
         $this->label = $label;
@@ -67,19 +44,11 @@ class Rendering
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFormat(): string
+    public function getFormat(): ?string
     {
         return $this->format;
     }
 
-    /**
-     * @param string $format
-     *
-     * @return Rendering
-     */
     public function setFormat(string $format): self
     {
         $this->format = $format;

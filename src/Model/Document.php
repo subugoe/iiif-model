@@ -9,149 +9,63 @@ namespace Subugoe\IIIFModel\Model;
  */
 class Document implements DocumentInterface
 {
-    /**
-     * @var string
-     */
-    private $id;
+    private ?string $id = null;
 
-    /**
-     * @var array
-     */
-    private $title = [];
+    private ?array $title;
 
-    /**
-     * @var array
-     */
-    private $subtitle = [];
+    private array $subtitle = [];
 
-    /**
-     * @var array
-     */
-    private $rightsOwner;
+    private array $rightsOwner = [];
 
-    /**
-     * @var array
-     */
-    private $metadata;
+    private ?array $metadata = null;
 
-    /**
-     * @var array
-     */
-    private $authors;
+    private array $authors = [];
 
-    /**
-     * @var array
-     */
-    private $classification;
+    private array $classification = [];
 
-    /**
-     * @var array
-     */
-    private $publishingPlaces;
+    private ?array $publishingPlaces;
 
-    /**
-     * @var int
-     */
-    private $publishingYear;
+    private ?int $publishingYear = null;
 
-    /**
-     * @var \DateTimeImmutable
-     */
-    private $indexingDate;
+    private ?\DateTimeImmutable $indexingDate = null;
 
-    /**
-     * @var string
-     */
-    private $titlePage;
+    private ?string $titlePage = null;
 
-    /**
-     * @var array
-     */
-    private $publisher;
+    private array $publisher = [];
 
-    /**
-     * @var array
-     */
-    private $language;
+    private array $language = [];
 
-    /**
-     * @var array
-     */
-    private $logicalStructures = [];
+    private array $logicalStructures = [];
 
-    /**
-     * @var array
-     */
-    private $physicalStructures = [];
+    private array $physicalStructures = [];
 
-    /**
-     * @var string
-     */
-    private $imageFormat = 'jpg';
+    private string $imageFormat = 'jpg';
 
-    /**
-     * @var string
-     */
-    private $type;
+    private ?string $type = null;
 
-    /**
-     * @var string
-     */
-    private $description;
+    private ?string $description = null;
 
-    /**
-     * @var array
-     */
-    private $parents = [];
+    private array $parents = [];
 
-    /**
-     * @var array
-     */
-    private $renderings = [];
+    private array $renderings = [];
 
-    /**
-     * @var array
-     */
-    private $seeAlso = [];
+    private array $seeAlso = [];
 
-    /**
-     * @var array
-     */
-    private $additionalIdentifiers = [];
+    private array $additionalIdentifiers = [];
 
-    /**
-     * @var string
-     */
-    private $issue;
+    private ?string $issue = null;
 
-    /**
-     * @var array
-     */
-    private $related = [];
+    private array $related = [];
 
-    /**
-     * @var string
-     */
-    private $permaLink;
+    private ?string $permaLink = null;
 
-    /**
-     * @var string
-     */
-    private $license = '';
+    private string $license = '';
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return DocumentInterface
-     */
     public function setId(string $id): DocumentInterface
     {
         $this->id = $id;
@@ -160,7 +74,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getTitle(): array
     {
@@ -168,9 +82,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $title
-     *
-     * @return DocumentInterface
+     * @param mixed[] $title
      */
     public function setTitle(array $title): DocumentInterface
     {
@@ -180,7 +92,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getRightsOwner(): array
     {
@@ -188,9 +100,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $rightsOwner
-     *
-     * @return DocumentInterface
+     * @param mixed[] $rightsOwner
      */
     public function setRightsOwner(array $rightsOwner): DocumentInterface
     {
@@ -200,7 +110,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getAuthors(): array
     {
@@ -208,9 +118,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $authors
-     *
-     * @return DocumentInterface
+     * @param mixed[] $authors
      */
     public function setAuthors(array $authors): DocumentInterface
     {
@@ -220,7 +128,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getPublishingPlaces(): array
     {
@@ -228,9 +136,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $publishingPlaces
-     *
-     * @return DocumentInterface
+     * @param mixed[] $publishingPlaces
      */
     public function setPublishingPlaces(array $publishingPlaces): DocumentInterface
     {
@@ -240,7 +146,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getClassification(): array
     {
@@ -248,9 +154,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $classification
-     *
-     * @return DocumentInterface
+     * @param mixed[] $classification
      */
     public function setClassification(array $classification): DocumentInterface
     {
@@ -259,19 +163,11 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getPublishingYear(): int
     {
         return $this->publishingYear;
     }
 
-    /**
-     * @param int $publishingYear
-     *
-     * @return DocumentInterface
-     */
     public function setPublishingYear(int $publishingYear): DocumentInterface
     {
         $this->publishingYear = $publishingYear;
@@ -279,19 +175,11 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getPublisher(): array
     {
         return $this->publisher;
     }
 
-    /**
-     * @param array $publisher
-     *
-     * @return DocumentInterface
-     */
     public function setPublisher(array $publisher): DocumentInterface
     {
         $this->publisher = $publisher;
@@ -299,18 +187,13 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getLanguage(): array
     {
         return $this->language;
     }
 
     /**
-     * @param array $language
-     *
-     * @return DocumentInterface
+     * @param mixed[] $language
      */
     public function setLanguage(array $language): DocumentInterface
     {
@@ -320,7 +203,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getSubtitle(): array
     {
@@ -328,9 +211,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $subtitle
-     *
-     * @return DocumentInterface
+     * @param mixed[] $subtitle
      */
     public function setSubtitle(array $subtitle): DocumentInterface
     {
@@ -339,19 +220,11 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getImageFormat(): string
     {
         return $this->imageFormat;
     }
 
-    /**
-     * @param string $imageFormat
-     *
-     * @return DocumentInterface
-     */
     public function setImageFormat(string $imageFormat): DocumentInterface
     {
         $this->imageFormat = $imageFormat;
@@ -360,7 +233,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getLogicalStructures(): array
     {
@@ -368,9 +241,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $logicalStructures
-     *
-     * @return DocumentInterface
+     * @param mixed[] $logicalStructures
      */
     public function setLogicalStructures(array $logicalStructures): DocumentInterface
     {
@@ -379,37 +250,21 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @param LogicalStructure $structure
-     */
-    public function addLogicalStructure(LogicalStructure $structure)
+    public function addLogicalStructure(LogicalStructure $structure): void
     {
         $this->logicalStructures[] = $structure;
     }
 
-    /**
-     * @param int $id
-     *
-     * @return LogicalStructure
-     */
     public function getLogicalStructure(int $id): LogicalStructure
     {
         return $this->logicalStructures[$id];
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     *
-     * @return DocumentInterface
-     */
     public function setType(string $type): DocumentInterface
     {
         $this->type = $type;
@@ -418,27 +273,20 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getPhysicalStructures(): array
     {
         return $this->physicalStructures;
     }
 
-    /**
-     * @param int $id
-     *
-     * @return PhysicalStructure
-     */
     public function getPhysicalStructure(int $id): PhysicalStructure
     {
         return $this->physicalStructures[$id];
     }
 
     /**
-     * @param array $physicalStructures
-     *
-     * @return DocumentInterface
+     * @param mixed[] $physicalStructures
      */
     public function setPhysicalStructures(array $physicalStructures): DocumentInterface
     {
@@ -447,27 +295,16 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @param PhysicalStructure $structure
-     */
-    public function addPhysicalStructure(PhysicalStructure $structure)
+    public function addPhysicalStructure(PhysicalStructure $structure): void
     {
         $this->physicalStructures[] = $structure;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     *
-     * @return DocumentInterface
-     */
     public function setDescription(string $description): DocumentInterface
     {
         $this->description = $description;
@@ -476,7 +313,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getParents(): array
     {
@@ -484,9 +321,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $parents
-     *
-     * @return DocumentInterface
+     * @param mixed[] $parents
      */
     public function setParents(array $parents): DocumentInterface
     {
@@ -498,13 +333,13 @@ class Document implements DocumentInterface
     /**
      * @param Document $document
      */
-    public function setParent(DocumentInterface $document)
+    public function setParent(DocumentInterface $document): void
     {
         $this->parents[] = $document;
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getRenderings(): array
     {
@@ -512,9 +347,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $renderings
-     *
-     * @return DocumentInterface
+     * @param mixed[] $renderings
      */
     public function setRenderings(array $renderings): DocumentInterface
     {
@@ -524,7 +357,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getSeeAlso(): array
     {
@@ -532,9 +365,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $seeAlso
-     *
-     * @return DocumentInterface
+     * @param mixed[] $seeAlso
      */
     public function setSeeAlso(array $seeAlso): DocumentInterface
     {
@@ -544,7 +375,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getMetadata(): array
     {
@@ -552,9 +383,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $metadata
-     *
-     * @return DocumentInterface
+     * @param mixed[] $metadata
      */
     public function setMetadata(array $metadata): DocumentInterface
     {
@@ -564,7 +393,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getAdditionalIdentifiers(): array
     {
@@ -572,9 +401,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $additionalIdentifiers
-     *
-     * @return DocumentInterface
+     * @param mixed[] $additionalIdentifiers
      */
     public function setAdditionalIdentifiers(array $additionalIdentifiers): DocumentInterface
     {
@@ -583,17 +410,13 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @param string $key
-     * @param string $value
-     */
-    public function addMetadata(string $key, string $value)
+    public function addMetadata(string $key, string $value): void
     {
         $this->metadata[$key] = $value;
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function getRelated(): array
     {
@@ -601,9 +424,7 @@ class Document implements DocumentInterface
     }
 
     /**
-     * @param array $related
-     *
-     * @return DocumentInterface
+     * @param mixed[] $related
      */
     public function setRelated(array $related): DocumentInterface
     {
@@ -612,19 +433,11 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return \DateTimeImmutable
-     */
     public function getIndexingDate(): \DateTimeImmutable
     {
         return $this->indexingDate;
     }
 
-    /**
-     * @param \DateTimeImmutable $indexingDate
-     *
-     * @return DocumentInterface
-     */
     public function setIndexingDate(\DateTimeImmutable $indexingDate): DocumentInterface
     {
         $this->indexingDate = $indexingDate;
@@ -632,19 +445,11 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getTitlePage(): string
     {
         return $this->titlePage;
     }
 
-    /**
-     * @param string $titlePage
-     *
-     * @return DocumentInterface
-     */
     public function setTitlePage(string $titlePage): DocumentInterface
     {
         $this->titlePage = $titlePage;
@@ -652,19 +457,11 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getIssue(): string
     {
         return $this->issue;
     }
 
-    /**
-     * @param string $issue
-     *
-     * @return DocumentInterface
-     */
     public function setIssue(string $issue): DocumentInterface
     {
         $this->issue = $issue;
@@ -672,19 +469,11 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getPermaLink(): string
     {
         return $this->permaLink;
     }
 
-    /**
-     * @param string $permaLink
-     *
-     * @return DocumentInterface
-     */
     public function setPermaLink(string $permaLink): DocumentInterface
     {
         $this->permaLink = $permaLink;
@@ -692,19 +481,11 @@ class Document implements DocumentInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getLicense(): string
     {
         return $this->license;
     }
 
-    /**
-     * @param string $license
-     *
-     * @return DocumentInterface
-     */
     public function setLicense(string $license): DocumentInterface
     {
         $this->license = $license;

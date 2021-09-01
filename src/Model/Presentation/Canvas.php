@@ -16,63 +16,34 @@ use JMS\Serializer\Annotation as Serializer;
 class Canvas
 {
     /**
-     * @var string
      * @Serializer\SerializedName("@context")
      * @Serializer\Exclude(if="object.getContext() === ''")
      */
-    private $context = 'http://iiif.io/api/presentation/2/context.json';
+    private string $context = 'http://iiif.io/api/presentation/2/context.json';
 
     /**
-     * @var string
      * @Serializer\SerializedName("@id")
      */
-    private $id;
+    private ?string $id = null;
+
+    private ?string $label = null;
+
+    private ?int $height = null;
+
+    private ?int $width = null;
+
+    private ?array $images = null;
 
     /**
-     * @var string
-     * @Serializer\SerializedName("@type")
-     */
-    private $type = 'sc:Canvas';
-
-    /**
-     * @var string
-     */
-    private $label;
-
-    /**
-     * @var int
-     */
-    private $height;
-
-    /**
-     * @var int
-     */
-    private $width;
-
-    /**
-     * @var array
-     */
-    private $images;
-
-    /**
-     * @var array
      * @Serializer\SerializedName("otherContent")
      */
-    private $otherContent;
+    private ?array $otherContent = null;
 
-    /**
-     * @return string
-     */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return Canvas
-     */
     public function setId(string $id): self
     {
         $this->id = $id;
@@ -80,19 +51,11 @@ class Canvas
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     *
-     * @return Canvas
-     */
     public function setLabel(string $label): self
     {
         $this->label = $label;
@@ -100,19 +63,11 @@ class Canvas
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getHeight(): int
+    public function getHeight(): ?int
     {
         return $this->height;
     }
 
-    /**
-     * @param int $height
-     *
-     * @return Canvas
-     */
     public function setHeight(int $height): self
     {
         $this->height = $height;
@@ -120,19 +75,11 @@ class Canvas
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getWidth(): int
+    public function getWidth(): ?int
     {
         return $this->width;
     }
 
-    /**
-     * @param int $width
-     *
-     * @return Canvas
-     */
     public function setWidth(int $width): self
     {
         $this->width = $width;
@@ -140,59 +87,35 @@ class Canvas
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getImages(): array
+    public function getImages(): ?array
     {
         return $this->images;
     }
 
-    /**
-     * @param array $images
-     *
-     * @return Canvas
-     */
-    public function setImages(array $images): self
+    public function setImages(?array $images): self
     {
         $this->images = $images;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getOtherContent(): array
+    public function getOtherContent(): ?array
     {
         return $this->otherContent;
     }
 
-    /**
-     * @param array $otherContent
-     *
-     * @return Canvas
-     */
-    public function setOtherContent(array $otherContent): self
+    public function setOtherContent(?array $otherContent): self
     {
         $this->otherContent = $otherContent;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getContext(): string
     {
         return $this->context;
     }
 
-    /**
-     * @param string $context
-     *
-     * @return Canvas
-     */
     public function setContext(string $context): self
     {
         $this->context = $context;

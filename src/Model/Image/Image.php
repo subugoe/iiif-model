@@ -12,20 +12,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Image
 {
     /**
-     * @var string
      * @Assert\NotBlank()
      */
-    protected $identifier;
+    protected ?string $identifier = null;
 
-    /**
-     * @var string
-     */
-    protected $region = 'full';
+    protected string $region = 'full';
 
-    /**
-     * @var string
-     */
-    protected $size;
+    protected ?string $size = null;
 
     /**
      * @var string|int
@@ -33,73 +26,45 @@ class Image
      */
     protected $rotation = 0;
 
-    /**
-     * @var string
-     */
-    protected $quality = 'default';
+    protected string $quality = 'default';
 
     /**
      * @see http://iiif.io/api/image/2.0/#format
      *
-     * @var string
      * @Assert\Choice(choices = {"jpg", "tif", "png", "gif", "jp2", "pdf", "webp"}, message="Please use a supported image format. See http://iiif.io/api/image/2.0/#format" )
      */
-    protected $format = 'jpg';
+    protected string $format = 'jpg';
 
-    /**
-     * @return string
-     */
-    public function getIdentifier()
+    public function getIdentifier(): ?string
     {
         return $this->identifier;
     }
 
-    /**
-     * @param string $identifier
-     *
-     * @return Image
-     */
-    public function setIdentifier($identifier)
+    public function setIdentifier(string $identifier): self
     {
         $this->identifier = $identifier;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->region;
     }
 
-    /**
-     * @param string $region
-     *
-     * @return Image
-     */
-    public function setRegion($region)
+    public function setRegion(string $region): self
     {
         $this->region = $region;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSize()
+    public function getSize(): ?string
     {
         return $this->size;
     }
 
-    /**
-     * @param string $size
-     *
-     * @return Image
-     */
-    public function setSize($size)
+    public function setSize(string $size): self
     {
         $this->size = $size;
 
@@ -116,50 +81,32 @@ class Image
 
     /**
      * @param int|string $rotation
-     *
-     * @return Image
      */
-    public function setRotation($rotation)
+    public function setRotation($rotation): self
     {
         $this->rotation = $rotation;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getQuality()
+    public function getQuality(): string
     {
         return $this->quality;
     }
 
-    /**
-     * @param string $quality
-     *
-     * @return Image
-     */
-    public function setQuality($quality)
+    public function setQuality(string $quality): self
     {
         $this->quality = $quality;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFormat()
+    public function getFormat(): string
     {
         return $this->format;
     }
 
-    /**
-     * @param string $format
-     *
-     * @return Image
-     */
-    public function setFormat($format)
+    public function setFormat(string $format): self
     {
         $this->format = $format;
 
