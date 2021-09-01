@@ -18,6 +18,17 @@ class Service
      */
     private ?string $id = null;
 
+    /**
+     * @var string
+     * @Serializer\SerializedName("@context")
+     */
+    private $context = 'http://iiif.io/api/image/2/context.json';
+
+    /**
+     * @var string
+     */
+    private $profile = 'http://iiif.io/api/image/2/level1.json';
+
     public function getId(): ?string
     {
         return $this->id;

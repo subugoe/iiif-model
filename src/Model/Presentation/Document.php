@@ -21,6 +21,31 @@ class Document
      */
     private ?string $id = null;
 
+    /**
+     * @var string
+     * @Serializer\SerializedName("@type")
+     * @Serializer\Since("v1")
+     */
+    private $type = 'sc:Manifest';
+
+    /**
+     * @var string
+     * @Serializer\SerializedName("@context")
+     * @Serializer\Since("v1")
+     */
+    private $context = 'http://iiif.io/api/presentation/2/context.json';
+
+    /**
+     * @var string
+     * @Serializer\SerializedName("viewingDirection")
+     */
+    private $viewingDirection = 'left-to-right';
+
+    /**
+     * @var string
+     * @Serializer\SerializedName("viewingHint")
+     */
+    private $viewingHint = 'paged';
     private ?string $license = null;
 
     private ?string $description = null;

@@ -14,6 +14,12 @@ use JMS\Serializer\Annotation as Serializer;
 class ImageInformation
 {
     /**
+     * @var string
+     * @Serializer\SerializedName("@context")
+     */
+    private $context = 'http://iiif.io/api/image/2/context.json';
+
+    /**
      * @Serializer\SerializedName("@id")
      */
     private ?string $id = null;
@@ -22,13 +28,27 @@ class ImageInformation
 
     private ?int $height = null;
 
-    private ?array $ppi = null;
+    /**
+     * @var string
+     */
+    private $protocol = 'http://iiif.io/api/image';
 
-    private ?array $sizes = null;
+    /**
+     * @var string
+     */
+    private $profile = 'http://iiif.io/api/image/2/level0.json';
 
-    private ?array $tiles = null;
+    /**
+     * @var array
+     */
+    private $sizes;
 
-    public function getId(): ?string
+    /**
+     * @var array
+     */
+    private $tiles;
+
+    public function getId(): string
     {
         return $this->id;
     }

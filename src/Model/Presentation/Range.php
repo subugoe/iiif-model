@@ -17,6 +17,13 @@ class Range
      */
     private ?string $id = null;
 
+    /**
+     * @Serializer\SerializedName("@type")
+     *
+     * @var string
+     */
+    private $type = 'sc:Range';
+
     private ?string $label = null;
 
     /**

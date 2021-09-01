@@ -11,7 +11,13 @@ class Collection
     /**
      * @Serializer\SerializedName("@id")
      */
-    private ?string $id = null;
+    private $id;
+
+    /**
+     * @var string
+     * @Serializer\SerializedName("@context")
+     */
+    private $context = 'http://iiif.io/api/presentation/2/context.json';
 
     /**
      * @Serializer\SerializedName("@type")

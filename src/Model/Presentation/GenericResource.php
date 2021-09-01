@@ -14,6 +14,23 @@ use JMS\Serializer\Annotation as Serializer;
 class GenericResource
 {
     /**
+     * @var string
+     * @Serializer\SerializedName("@context")
+     */
+    private $context = 'http://iiif.io/api/presentation/2/context.json';
+
+    /**
+     * @var string
+     * @Serializer\SerializedName("@type")
+     */
+    private $type = 'oa:Annotation';
+
+    /**
+     * @var string
+     */
+    private $motivation = 'sc:painting';
+
+    /**
      * @Serializer\SerializedName("@id")
      */
     private ?string $id = null;

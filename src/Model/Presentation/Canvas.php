@@ -22,6 +22,12 @@ class Canvas
     private string $context = 'http://iiif.io/api/presentation/2/context.json';
 
     /**
+     * @var string
+     * @Serializer\SerializedName("@type")
+     */
+    private $type = 'sc:Canvas';
+
+    /**
      * @Serializer\SerializedName("@id")
      */
     private ?string $id = null;

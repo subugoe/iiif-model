@@ -27,6 +27,29 @@ final class Sequence
     private ?string $id = null;
 
     /**
+     * @var string
+     * @Serializer\SerializedName("@type")
+     */
+    private $type = 'sc:Sequence';
+
+    /**
+     * @var string
+     */
+    private $label = 'Current Page Order';
+
+    /**
+     * @var string
+     * @Serializer\SerializedName("viewingDirection")
+     */
+    private $viewingDirection = 'left-to-right';
+
+    /**
+     * @var string
+     * @Serializer\SerializedName("viewingHint")
+     */
+    private $viewingHint = 'paged';
+
+    /**
      * @Serializer\SerializedName("startCanvas")
      */
     private ?string $startCanvas = null;
