@@ -11,7 +11,7 @@ class Document implements DocumentInterface
 {
     private ?string $id = null;
 
-    private ?array $title;
+    private ?array $title = null;
 
     private array $subtitle = [];
 
@@ -23,7 +23,7 @@ class Document implements DocumentInterface
 
     private array $classification = [];
 
-    private ?array $publishingPlaces;
+    private ?array $publishingPlaces = null;
 
     private ?int $publishingYear = null;
 
