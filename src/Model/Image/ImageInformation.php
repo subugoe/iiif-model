@@ -17,7 +17,7 @@ class ImageInformation
      * @var string
      * @Serializer\SerializedName("@context")
      */
-    private $context = 'https://iiif.io/api/image/2/context.json';
+    private $context = 'http://iiif.io/api/image/2/context.json';
 
     /**
      * @Serializer\SerializedName("@id")
@@ -31,12 +31,12 @@ class ImageInformation
     /**
      * @var string
      */
-    private string $protocol = 'https://iiif.io/api/image';
+    private string $protocol = 'http://iiif.io/api/image';
 
     /**
      * @var string
      */
-    private string $profile = 'https://iiif.io/api/image/2/level0.json';
+    private string $profile = 'http://iiif.io/api/image/2/level0.json';
 
     /**
      * @var array
