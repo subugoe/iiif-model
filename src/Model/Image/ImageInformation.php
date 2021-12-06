@@ -17,7 +17,7 @@ class ImageInformation
      * @var string
      * @Serializer\SerializedName("@context")
      */
-    private $context = 'http://iiif.io/api/image/2/context.json';
+    private $context = 'https://iiif.io/api/image/2/context.json';
 
     /**
      * @Serializer\SerializedName("@id")
@@ -31,12 +31,12 @@ class ImageInformation
     /**
      * @var string
      */
-    private $protocol = 'http://iiif.io/api/image';
+    private string $protocol = 'https://iiif.io/api/image';
 
     /**
      * @var string
      */
-    private $profile = 'http://iiif.io/api/image/2/level0.json';
+    private string $profile = 'https://iiif.io/api/image/2/level0.json';
 
     /**
      * @var array
@@ -119,4 +119,20 @@ class ImageInformation
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getProfile(): string
+    {
+        return $this->profile;
+    }
+
+    public function setProfile(string $profile): self
+    {
+        $this->profile = $profile;
+        return $this;
+    }
+
+
 }
