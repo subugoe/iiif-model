@@ -26,7 +26,7 @@ class Document
      * @Serializer\SerializedName("@type")
      * @Serializer\Since("v1")
      */
-    private $type = 'sc:Manifest';
+    private $type = 'Manifest';
 
     /**
      * @var string
