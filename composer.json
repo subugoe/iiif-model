@@ -18,5 +18,8 @@
     "psr-4": {
       "Subugoe\\IIIFModel\\": "src/"
     }
+  },
+  "require-dev": {
+    "rector/rector": "^2.5"
   }
 }

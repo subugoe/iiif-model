@@ -1,115 +1,138 @@
 <?php
 
-namespace Subugoe\IIIFModel\Model;
+declare(strict_types=1);
 
-use MyCLabs\Enum\Enum;
+namespace Subugoe\IIIFModel\Model;
 
 /**
  * @see http://dfg-viewer.de/strukturdatenset/
  * We only use a small subset as defined some specifications
  * on http://www.eromm.org/dcgkb/doku.php?id=goobi:subregelsatz:start
  */
-class DocumentTypes extends Enum
+enum DocumentTypes
 {
     /**
      * @var string
      */
-    public const ARTICLE = 'article';
-    /**
-     * @var string
-     */
-    public const BINDING = 'binding';
-    /**
-     * @var string
-     */
-    public const BUNDLE = 'bundle';
-    /**
-     * @var string
-     */
-    public const COLOPHON = 'colophon';
-    /**
-     * @var string
-     */
-    public const CONTAINED_WORK = 'contained_work';
-    /**
-     * @var string
-     */
-    public const CORRIGENDA = 'corrigenda';
-    /**
-     * @var string
-     */
-    public const DEDICATION = 'dedication';
-    /**
-     * @var string
-     */
-    public const ENGRAVED_TITLEPAGE = 'engraved_titlepage';
-    /**
-     * @var string
-     */
-    public const FILE = 'file';
-    /**
-     * @var string
-     */
-    public const FOLDER = 'folder';
-    /**
-     * @var string
-     */
-    public const ILLUSTRATION = 'illustration';
-    /**
-     * @var string
-     */
-    public const INDEX = 'index';
-    /**
-     * @var string
-     */
-    public const ISSUE = 'issue';
-    /**
-     * @var string
-     */
-    public const MAP = 'map';
-    /**
-     * @var string
-     */
-    public const MONOGRAPH = 'monograph';
-    /**
-     * @var string
-     */
-    public const MULTIVOLUME_WORK = 'multivolume_work';
-    /**
-     * @var string
-     */
-    public const MUSICAL_NOTATION = 'musical_notation';
-    /**
-     * @var string
-     */
-    public const PERIODICAL = 'volume';
-    /**
-     * @var string
-     */
-    public const PREFACE = 'preface';
-    /**
-     * @var string
-     */
-    public const SECTION = 'section';
-    /**
-     * @var string
-     */
-    public const TABLE_OF_CONTENTS = 'contents';
-    /**
-     * @var string
-     */
-    public const TABLE = 'table';
-    /**
-     * @var string
-     */
-    public const TITLE_PAGE = 'title_page';
-    /**
-     * @var string
-     */
-    public const VOLUME = 'volume';
+    public const string ARTICLE = 'article';
 
     /**
      * @var string
      */
-    public const UNKNOWN = 'unknown';
+    public const string BINDING = 'binding';
+
+    /**
+     * @var string
+     */
+    public const string BUNDLE = 'bundle';
+
+    /**
+     * @var string
+     */
+    public const string COLOPHON = 'colophon';
+
+    /**
+     * @var string
+     */
+    public const string CONTAINED_WORK = 'contained_work';
+
+    /**
+     * @var string
+     */
+    public const string CORRIGENDA = 'corrigenda';
+
+    /**
+     * @var string
+     */
+    public const string DEDICATION = 'dedication';
+
+    /**
+     * @var string
+     */
+    public const string ENGRAVED_TITLEPAGE = 'engraved_titlepage';
+
+    /**
+     * @var string
+     */
+    public const string FILE = 'file';
+
+    /**
+     * @var string
+     */
+    public const string FOLDER = 'folder';
+
+    /**
+     * @var string
+     */
+    public const string ILLUSTRATION = 'illustration';
+
+    /**
+     * @var string
+     */
+    public const string INDEX = 'index';
+
+    /**
+     * @var string
+     */
+    public const string ISSUE = 'issue';
+
+    /**
+     * @var string
+     */
+    public const string MAP = 'map';
+
+    /**
+     * @var string
+     */
+    public const string MONOGRAPH = 'monograph';
+
+    /**
+     * @var string
+     */
+    public const string MULTIVOLUME_WORK = 'multivolume_work';
+
+    /**
+     * @var string
+     */
+    public const string MUSICAL_NOTATION = 'musical_notation';
+
+    /**
+     * @var string
+     */
+    public const string PERIODICAL = 'volume';
+
+    /**
+     * @var string
+     */
+    public const string PREFACE = 'preface';
+
+    /**
+     * @var string
+     */
+    public const string SECTION = 'section';
+
+    /**
+     * @var string
+     */
+    public const string TABLE_OF_CONTENTS = 'contents';
+
+    /**
+     * @var string
+     */
+    public const string TABLE = 'table';
+
+    /**
+     * @var string
+     */
+    public const string TITLE_PAGE = 'title_page';
+
+    /**
+     * @var string
+     */
+    public const string VOLUME = 'volume';
+
+    /**
+     * @var string
+     */
+    public const string UNKNOWN = 'unknown';
 }

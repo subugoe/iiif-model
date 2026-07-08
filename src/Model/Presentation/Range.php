@@ -22,7 +22,7 @@ class Range
     #[Serializer\SerializedName('viewingHint')]
     private string $viewingHint = 'top';
 
-    private ?array $members;
+    private ?array $members = null;
 
     public function getId(): ?string
     {

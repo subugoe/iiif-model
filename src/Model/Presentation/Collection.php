@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation as Serializer;
 class Collection
 {
     #[Serializer\SerializedName('@id')]
-    private ?string $id;
+    private ?string $id = null;
 
     #[Serializer\SerializedName('@context')]
     private string $context = 'http://iiif.io/api/presentation/2/context.json';

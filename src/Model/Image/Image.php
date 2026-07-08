@@ -21,7 +21,7 @@ class Image
     /**
      * @var string|int
      */
-    #[Assert\Regex(pattern: '/^(!)?(-)?[0-9]{1,3}$/', message: 'Invalid rotation format')]
+    #[Assert\Regex(pattern: '/^(!)?(-)?\d{1,3}$/', message: 'Invalid rotation format')]
     protected $rotation = 0;
 
     protected string $quality = 'default';

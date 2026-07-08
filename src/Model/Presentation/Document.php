@@ -31,6 +31,7 @@ class Document
 
     #[Serializer\SerializedName('viewingHint')]
     private string $viewingHint = 'paged';
+
     private ?string $license = null;
 
     private ?string $description = null;
