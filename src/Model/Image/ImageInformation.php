@@ -12,7 +12,7 @@ use JMS\Serializer\Annotation as Serializer;
 #[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class ImageInformation
 {
-    public $ppi;
+    public ?array $ppi = null;
 
     #[Serializer\SerializedName('@context')]
     private string $context = 'http://iiif.io/api/image/2/context.json';
@@ -28,7 +28,7 @@ class ImageInformation
 
     private string $profile = 'http://iiif.io/api/image/2/level0.json';
 
-    private string $sizes;
+    private array $sizes;
 
     private array $tiles;
 
