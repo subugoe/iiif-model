@@ -20,7 +20,7 @@ class Document
 
     #[Serializer\SerializedName('@type')]
     #[Serializer\Since('v1')]
-    private string $type = 'Manifest';
+    private string $type = 'sc:Manifest';
 
     #[Serializer\SerializedName('@context')]
     #[Serializer\Since('v1')]

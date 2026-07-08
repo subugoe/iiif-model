@@ -13,6 +13,7 @@ use JMS\Serializer\Annotation as Serializer;
 class ImageInformation
 {
     public $ppi;
+
     #[Serializer\SerializedName('@context')]
     private string $context = 'http://iiif.io/api/image/2/context.json';
 
