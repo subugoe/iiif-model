@@ -5,31 +5,22 @@ declare(strict_types=1);
 namespace Subugoe\IIIFModel\Model\Presentation;
 
 use JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /**
- * Class Canvas.
- *
  * @see http://iiif.io/api/presentation/2.1/#canvas
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(ExclusionPolicy::NONE)]
 class Canvas
 {
-    /**
-     * @Serializer\SerializedName("@context")
-     * @Serializer\Exclude(if="object.getContext() === ''")
-     */
+    #[Serializer\SerializedName('@context')]
+    #[Serializer\Exclude(if: "object.getContext() === ''")]
     private string $context = 'http://iiif.io/api/presentation/2/context.json';
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@type")
-     */
-    private $type = 'sc:Canvas';
+    #[Serializer\SerializedName('@type')]
+    private string $type = 'sc:Canvas';
 
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
     private ?string $label = null;
@@ -40,9 +31,7 @@ class Canvas
 
     private ?array $images = null;
 
-    /**
-     * @Serializer\SerializedName("otherContent")
-     */
+    #[Serializer\SerializedName('otherContent')]
     private ?array $otherContent = null;
 
     public function getId(): ?string

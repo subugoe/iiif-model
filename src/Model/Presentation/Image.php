@@ -8,14 +8,11 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * An image.
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class Image
 {
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
     private ?\Subugoe\IIIFModel\Model\Presentation\Service $service = null;

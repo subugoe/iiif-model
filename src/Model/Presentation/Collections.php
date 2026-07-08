@@ -11,23 +11,14 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Collections
 {
-    /**
-     * @var string
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName("@id")]
     private ?string $id = null;
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@type")
-     */
-    private $type = 'sc:Collection';
+    #[Serializer\SerializedName("@type")]
+    private string $type = 'sc:Collection';
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     */
-    private $context = 'https://iiif.io/api/presentation/2/context.json';
+    #[Serializer\SerializedName('@context')]
+    private string $context = 'https://iiif.io/api/presentation/2/context.json';
 
     private ?string $label = null;
 

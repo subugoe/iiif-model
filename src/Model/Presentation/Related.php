@@ -11,9 +11,7 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Related
 {
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
     private ?string $label = null;

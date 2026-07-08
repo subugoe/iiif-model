@@ -8,26 +8,17 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * IIIF Service definition.
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class Service
 {
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     */
-    private $context = 'http://iiif.io/api/image/2/context.json';
+    #[Serializer\SerializedName('@context')]
+    private string $context = 'http://iiif.io/api/image/2/context.json';
 
-    /**
-     * @var string
-     */
-    private $profile = 'http://iiif.io/api/image/2/level1.json';
+    private string $profile = 'http://iiif.io/api/image/2/level1.json';
 
     public function getId(): ?string
     {

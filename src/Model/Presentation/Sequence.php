@@ -10,48 +10,29 @@ use JMS\Serializer\Annotation as Serializer;
  * A sequence.
  *
  * @see http://iiif.io/api/presentation/2.1/#sequence
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 final class Sequence
 {
-    /**
-     * @Serializer\SerializedName("@context")
-     * @Serializer\Exclude(if="object.getContext() === ''")
-     */
+    #[Serializer\SerializedName('@context')]
+    #[Serializer\Exclude(if: "object.getContext() === ''")]
     private string $context = 'http://iiif.io/api/presentation/2/context.json';
 
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@type")
-     */
-    private $type = 'sc:Sequence';
+    #[Serializer\SerializedName('@type')]
+    private string $type = 'sc:Sequence';
 
-    /**
-     * @var string
-     */
-    private $label = 'Current Page Order';
+    private string $label = 'Current Page Order';
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("viewingDirection")
-     */
-    private $viewingDirection = 'left-to-right';
+    #[Serializer\SerializedName('viewingDirection')]
+    private string $viewingDirection = 'left-to-right';
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("viewingHint")
-     */
-    private $viewingHint = 'paged';
+    #[Serializer\SerializedName('viewingHint')]
+    private string $viewingHint = 'paged';
 
-    /**
-     * @Serializer\SerializedName("startCanvas")
-     */
+    #[Serializer\SerializedName('startCanvas')]
     private ?string $startCanvas = null;
 
     private ?array $canvases = null;

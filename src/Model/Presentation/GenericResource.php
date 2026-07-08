@@ -8,31 +8,19 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @see http://iiif.io/api/presentation/2.1/#image-resources
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class GenericResource
 {
-    /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     */
-    private $context = 'http://iiif.io/api/presentation/2/context.json';
+    #[Serializer\SerializedName('@context')]
+    private string $context = 'http://iiif.io/api/presentation/2/context.json';
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@type")
-     */
-    private $type = 'oa:Annotation';
+    #[Serializer\SerializedName('@type')]
+    private string $type = 'oa:Annotation';
 
-    /**
-     * @var string
-     */
-    private $motivation = 'sc:painting';
+    private string $motivation = 'sc:painting';
 
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
     private ?\Subugoe\IIIFModel\Model\Presentation\ResourceData $resource = null;

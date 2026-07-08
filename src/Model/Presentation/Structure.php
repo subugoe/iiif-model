@@ -8,27 +8,21 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @see http://iiif.io/api/presentation/2.1/#range
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class Structure
 {
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
-    /**
-     * @Serializer\SerializedName("@type")
-     */
+    #[Serializer\SerializedName('@type')]
     private string $type = 'sc:Range';
 
     private ?array $metadata = null;
 
     private ?string $label = null;
 
-    /**
-     * @Serializer\SerializedName("viewingHint")
-     */
+    #[Serializer\SerializedName('viewingHint')]
     private ?string $viewingHint = null;
 
     private ?array $members = null;
@@ -39,9 +33,7 @@ class Structure
 
     private ?string $within = null;
 
-    /**
-     * @Serializer\SkipWhenEmpty()
-     */
+    #[Serializer\SkipWhenEmpty]
     private array $rendering = [];
 
     public function getId(): ?string

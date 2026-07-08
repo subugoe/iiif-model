@@ -11,9 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Image
 {
-    /**
-     * @Assert\NotBlank()
-     */
+    #[Assert\NotBlank]
     protected ?string $identifier = null;
 
     protected string $region = 'full';
@@ -22,17 +20,16 @@ class Image
 
     /**
      * @var string|int
-     * @Assert\Regex(pattern="/^(!)?(-)?[0-9]{1,3}$/", message="Invalid rotation format"))
      */
+    #[Assert\Regex(pattern: '/^(!)?(-)?[0-9]{1,3}$/', message: 'Invalid rotation format')]
     protected $rotation = 0;
 
     protected string $quality = 'default';
 
     /**
      * @see http://iiif.io/api/image/2.0/#format
-     *
-     * @Assert\Choice(choices = {"jpg", "tif", "png", "gif", "jp2", "pdf", "webp"}, message="Please use a supported image format. See http://iiif.io/api/image/2.0/#format" )
      */
+    #[Assert\Choice(choices: ["jpg", "tif", "png", "gif", "jp2", "pdf", "webp"], message: "Please use a supported image format. See http://iiif.io/api/image/2.0/#format")]
     protected string $format = 'jpg';
 
     public function getIdentifier(): ?string

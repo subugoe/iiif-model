@@ -8,18 +8,15 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Tiles for image api.
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class Tile
 {
     private ?int $width = null;
 
     private ?int $height = null;
 
-    /**
-     * @Serializer\SerializedName("scaleFactors")
-     */
+    #[Serializer\SerializedName('scaleFactors')]
     private array $scaleFactors = [1, 2, 4, 8, 16];
 
     public function getWidth(): ?int

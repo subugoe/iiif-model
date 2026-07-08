@@ -11,14 +11,11 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class ResourceData
 {
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
-    /**
-     * @Serializer\SerializedName("@type")
-     */
+    #[Serializer\SerializedName('@type')]
     private string $type = 'dctypes:Image';
 
     private ?string $format = null;

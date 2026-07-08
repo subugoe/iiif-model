@@ -8,45 +8,27 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Image informations for info.json file.
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class ImageInformation
 {
-    /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     */
-    private $context = 'http://iiif.io/api/image/2/context.json';
+    #[Serializer\SerializedName('@context')]
+    private string $context = 'http://iiif.io/api/image/2/context.json';
 
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
     private ?int $width = null;
 
     private ?int $height = null;
 
-    /**
-     * @var string
-     */
     private string $protocol = 'http://iiif.io/api/image';
 
-    /**
-     * @var string
-     */
     private string $profile = 'http://iiif.io/api/image/2/level0.json';
 
-    /**
-     * @var array
-     */
-    private $sizes;
+    private string $sizes;
 
-    /**
-     * @var array
-     */
-    private $tiles;
+    private array $tiles;
 
     public function getId(): string
     {

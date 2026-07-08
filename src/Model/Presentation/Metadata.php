@@ -8,17 +8,13 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Manifest metadata.
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class Metadata
 {
     private ?string $label = null;
 
-    /**
-     * @var string|array
-     */
-    private $value;
+    private string|array $value;
 
     public function getLabel(): ?string
     {
@@ -35,15 +31,16 @@ class Metadata
     /**
      * @return string|array
      */
-    public function getValue()
+    public function getValue(): array|string
     {
         return $this->value;
     }
 
     /**
-     * @param string|array $value
+     * @param array|string $value
+     * @return Metadata
      */
-    public function setValue($value): self
+    public function setValue(array|string $value): self
     {
         $this->value = $value;
 

@@ -11,20 +11,14 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class AnnotationList
 {
-    /**
-     * @Serializer\SerializedName("@context")
-     * @Serializer\Since("2.0")
-     */
+    #[Serializer\SerializedName('@context')]
+    #[Serializer\Since('2.0')]
     private string $context = 'http://iiif.io/api/presentation/2/context.json';
 
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
-    /**
-     * @Serializer\SerializedName("@type")
-     */
+    #[Serializer\SerializedName('@type')]
     private string $type = 'sc:AnnotationList';
 
     private ?array $resources = null;

@@ -11,9 +11,7 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class SeeAlso
 {
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
     private ?string $format = null;

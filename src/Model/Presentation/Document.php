@@ -10,49 +10,32 @@ use JMS\Serializer\Annotation as Serializer;
  * A solr document.
  *
  * @see http://iiif.io/api/presentation/2.1/#manifest
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class Document
 {
-    /**
-     * @Serializer\SerializedName("@id")
-     * @Serializer\Since("v1")
-     */
+    #[Serializer\SerializedName('@id')]
+    #[Serializer\Since('v1')]
     private ?string $id = null;
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@type")
-     * @Serializer\Since("v1")
-     */
-    private $type = 'Manifest';
+    #[Serializer\SerializedName('@type')]
+    #[Serializer\Since('v1')]
+    private string $type = 'Manifest';
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("@context")
-     * @Serializer\Since("v1")
-     */
-    private $context = 'http://iiif.io/api/presentation/2/context.json';
+    #[Serializer\SerializedName('@context')]
+    #[Serializer\Since('v1')]
+    private string $context = 'http://iiif.io/api/presentation/2/context.json';
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("viewingDirection")
-     */
-    private $viewingDirection = 'left-to-right';
+    #[Serializer\SerializedName('viewingDirection')]
+    private string $viewingDirection = 'left-to-right';
 
-    /**
-     * @var string
-     * @Serializer\SerializedName("viewingHint")
-     */
-    private $viewingHint = 'paged';
+    #[Serializer\SerializedName('viewingHint')]
+    private string $viewingHint = 'paged';
     private ?string $license = null;
 
     private ?string $description = null;
 
-    /**
-     * @Serializer\SerializedName("navDate")
-     */
+    #[Serializer\SerializedName('navDate')]
     private ?\DateTimeInterface $navDate = null;
 
     private ?string $within = null;
@@ -71,21 +54,15 @@ class Document
 
     private ?array $sequences = null;
 
-    /**
-     * @Serializer\SkipWhenEmpty()
-     */
+    #[Serializer\SkipWhenEmpty()]
     private ?string $attribution = null;
 
     private ?\Subugoe\IIIFModel\Model\Presentation\Image $logo = null;
 
-    /**
-     * @Serializer\SkipWhenEmpty()
-     */
+    #[Serializer\SkipWhenEmpty()]
     private array $rendering = [];
 
-    /**
-     * @Serializer\SerializedName("seeAlso")
-     */
+    #[Serializer\SerializedName('seeAlso')]
     private ?array $seeAlso = null;
 
     /**
@@ -93,9 +70,7 @@ class Document
      */
     private ?array $structures = null;
 
-    /**
-     * @Serializer\SkipWhenEmpty()
-     */
+    #[Serializer\SkipWhenEmpty()]
     private array $related = [];
 
     public function getId(): ?string

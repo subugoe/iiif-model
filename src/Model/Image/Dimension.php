@@ -8,9 +8,8 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Image Dimensions.
- *
- * @Serializer\ExclusionPolicy("NONE")
  */
+#[Serializer\ExclusionPolicy(Serializer\ExclusionPolicy::NONE)]
 class Dimension
 {
     private ?float $height = null;

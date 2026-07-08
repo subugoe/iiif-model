@@ -8,27 +8,18 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @see http://iiif.io/api/presentation/2.1/#range
- * Range
  */
 class Range
 {
-    /**
-     * @Serializer\SerializedName("@id")
-     */
+    #[Serializer\SerializedName('@id')]
     private ?string $id = null;
 
-    /**
-     * @Serializer\SerializedName("@type")
-     *
-     * @var string
-     */
-    private $type = 'sc:Range';
+    #[Serializer\SerializedName('@type')]
+    private string $type = 'sc:Range';
 
     private ?string $label = null;
 
-    /**
-     * @Serializer\SerializedName("viewingHint")
-     */
+    #[Serializer\SerializedName('viewingHint')]
     private string $viewingHint = 'top';
 
     private ?array $members;
